@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { NavTab, ProjectItem, MigrationSlice } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -48,31 +49,42 @@ export default function App() {
       </div>
 
       {/* Main Page View Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        {currentTab === 'home' && (
-          <HomeView
-            onSelectTab={setCurrentTab}
-            onOpenProjectDetail={handleOpenProjectDetail}
-            onOpenResume={() => setIsResumeOpen(true)}
-            onOpenContact={() => setIsContactOpen(true)}
-            onLaunchDemo={handleLaunchDemo}
-          />
-        )}
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 overflow-x-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="w-full"
+          >
+            {currentTab === 'home' && (
+              <HomeView
+                onSelectTab={setCurrentTab}
+                onOpenProjectDetail={handleOpenProjectDetail}
+                onOpenResume={() => setIsResumeOpen(true)}
+                onOpenContact={() => setIsContactOpen(true)}
+                onLaunchDemo={handleLaunchDemo}
+              />
+            )}
 
-        {currentTab === 'projects' && (
-          <ProjectsView
-            onOpenProjectDetail={handleOpenProjectDetail}
-            onLaunchDemo={handleLaunchDemo}
-          />
-        )}
+            {currentTab === 'projects' && (
+              <ProjectsView
+                onOpenProjectDetail={handleOpenProjectDetail}
+                onLaunchDemo={handleLaunchDemo}
+              />
+            )}
 
-        {currentTab === 'skills' && <SkillsView />}
+            {currentTab === 'skills' && <SkillsView />}
 
-        {currentTab === 'experience' && <ExperienceView />}
+            {currentTab === 'experience' && <ExperienceView />}
 
-        {currentTab === 'demos' && <LiveDemosView initialDemo={activeDemoId} />}
+            {currentTab === 'demos' && <LiveDemosView initialDemo={activeDemoId} />}
 
-        {currentTab === 'interview' && <InterviewModeView />}
+            {currentTab === 'interview' && <InterviewModeView />}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       {/* Footer */}

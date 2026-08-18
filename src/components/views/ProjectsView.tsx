@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { CORE_PROJECTS, MIGRATION_OVERVIEW, MIGRATION_SLICES } from '../../data/portfolioData';
 import { ProjectItem, MigrationSlice } from '../../types';
 import { 
@@ -110,6 +111,47 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
           {MIGRATION_OVERVIEW.scope} {MIGRATION_OVERVIEW.sliceDelivery} {MIGRATION_OVERVIEW.evidence}
         </p>
 
+        {/* Consolidation Strategy Section */}
+        {MIGRATION_OVERVIEW.consolidationStats && (
+          <div className="pt-4 space-y-4">
+            <h3 className="text-xs font-mono uppercase tracking-widest text-[#00dbe7] font-bold flex items-center space-x-2">
+              <FolderGit2 className="w-4 h-4" />
+              <span>Consolidation & Modernization Strategy</span>
+            </h3>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 font-mono">
+              <div className="bg-[#111318] p-4 rounded-xl border border-[#282a2e] flex flex-col justify-between">
+                <span className="text-2xl font-extrabold text-white">{MIGRATION_OVERVIEW.consolidationStats.uniqueGroups}</span>
+                <span className="text-[10px] text-[#c0c7d4] uppercase mt-1">Unique App Groups Analyzed</span>
+              </div>
+              <div className="bg-[#111318] p-4 rounded-xl border border-[#282a2e] flex flex-col justify-between">
+                <span className="text-2xl font-extrabold text-[#a3c9ff]">{MIGRATION_OVERVIEW.consolidationStats.sharedCrossDepartment}</span>
+                <span className="text-[10px] text-[#c0c7d4] uppercase mt-1">Cross-Dept Shared Apps Merged</span>
+              </div>
+              <div className="bg-[#111318] p-4 rounded-xl border border-[#282a2e] flex flex-col justify-between">
+                <span className="text-2xl font-extrabold text-[#00dbe7]">{MIGRATION_OVERVIEW.consolidationStats.sameDepartmentVariants}</span>
+                <span className="text-[10px] text-[#c0c7d4] uppercase mt-1">Same-Dept Variants Unified</span>
+              </div>
+              <div className="bg-[#111318] p-4 rounded-xl border border-[#282a2e] flex flex-col justify-between">
+                <span className="text-2xl font-extrabold text-[#dab9ff]">{MIGRATION_OVERVIEW.consolidationStats.routingDifferencesResolved}</span>
+                <span className="text-[10px] text-[#c0c7d4] uppercase mt-1">Routing Conflicts Resolved</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+              {MIGRATION_OVERVIEW.highlightedConsolidations?.map((highlight, idx) => (
+                <div key={idx} className="bg-[#1a1c20] p-4 rounded-xl border border-[#282a2e] space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-white">{highlight.name}</span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1e2024] text-[#a3c9ff] border border-[#282a2e]">{highlight.type}</span>
+                  </div>
+                  <p className="text-[11px] text-[#e2e2e8] leading-relaxed">{highlight.resolution}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* 6 Migration Slices Grid */}
         <div className="space-y-4 pt-4">
           <div className="flex flex-col gap-3">
@@ -166,13 +208,19 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredSlices.map((slice) => (
-              <div
-                key={slice.id}
-                onClick={() => onOpenProjectDetail(slice)}
-                className="glass-card p-5 rounded-2xl space-y-3 cursor-pointer group flex flex-col justify-between"
-              >
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <AnimatePresence mode="popLayout">
+              {filteredSlices.map((slice) => (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  key={slice.id}
+                  onClick={() => onOpenProjectDetail(slice)}
+                  className="glass-card p-5 rounded-2xl space-y-3 cursor-pointer group flex flex-col justify-between"
+                >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="w-10 h-10 rounded-lg bg-[#0078d4]/20 border border-[#0078d4]/40 text-[#a3c9ff] font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(0,120,212,0.3)]">
@@ -203,9 +251,10 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 
@@ -249,13 +298,19 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((proj) => (
-            <div
-              key={proj.id}
-              className="glass-card p-8 rounded-3xl space-y-5 flex flex-col justify-between hover:border-[#0078d4]/50 transition-all cursor-pointer shadow-lg"
-              onClick={() => onOpenProjectDetail(proj)}
-            >
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((proj) => (
+              <motion.div
+                layout
+                initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                transition={{ duration: 0.2 }}
+                key={proj.id}
+                className="glass-card p-8 rounded-3xl space-y-5 flex flex-col justify-between hover:border-[#0078d4]/50 transition-all cursor-pointer shadow-lg"
+                onClick={() => onOpenProjectDetail(proj)}
+              >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-[#1e2024] text-[#a3c9ff] border border-[#282a2e] font-bold">
@@ -334,9 +389,10 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                   </button>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+          </AnimatePresence>
+        </motion.div>
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-12 bg-[#161b22] rounded-2xl border border-[#282a2e] space-y-3">

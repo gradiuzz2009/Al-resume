@@ -272,7 +272,25 @@ export const MIGRATION_OVERVIEW = {
     medium: 28,
     low: 12
   },
-  evidence: "Documented the Quality / Warehouse / Master Data slice by analyzing 54 system reports covering 6 critical domains."
+  evidence: "Documented the Quality / Warehouse / Master Data slice by analyzing 54 system reports covering 6 critical domains.",
+  consolidationStats: {
+    uniqueGroups: 314,
+    sharedCrossDepartment: 7,
+    sameDepartmentVariants: 8,
+    routingDifferencesResolved: 8
+  },
+  highlightedConsolidations: [
+    {
+      name: "Customer Requirement Review & EnMS",
+      type: "Cross-Department & Multi-Site",
+      resolution: "Unified disparate Johor/Penang routing behaviors and QA/Marketing approval paths into single Dataverse-backed architectures."
+    },
+    {
+      name: "Yearly Database Silos (e.g. CCCAR 2026, Sampling)",
+      type: "Same-Department Variants",
+      resolution: "Merged scattered, year-based Domino databases into continuous, scalable cloud data schemas with automated routing."
+    }
+  ]
 };
 
 export const MIGRATION_SLICES: MigrationSlice[] = [

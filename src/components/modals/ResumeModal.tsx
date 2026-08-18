@@ -298,20 +298,20 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, onOpe
         </div>
 
         {/* Footer Actions */}
-        <div className="px-6 py-4 sm:py-5 border-t border-[#282a2e] bg-[#111318] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sticky bottom-0">
+        <div className="px-6 py-5 border-t border-[#282a2e] bg-[#111318] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sticky bottom-0 z-10">
           <span className="hidden sm:block text-xs text-[#e2e2e8] font-mono">Ali Akhmad Fauzie • Last Updated 2025</span>
           <div className="flex flex-col-reverse sm:flex-row w-full sm:w-auto items-stretch sm:items-center gap-3">
             <button
               onClick={onClose}
-              className="w-full sm:w-auto px-4 py-3 sm:py-2.5 rounded-xl sm:rounded-lg text-sm sm:text-xs font-semibold text-[#e2e2e8] hover:text-white bg-[#1e2024] border border-[#282a2e] focus:outline-none focus:ring-2 focus:ring-[#00dbe7]"
+              className="w-full sm:w-auto px-4 py-3.5 sm:py-2.5 rounded-xl sm:rounded-lg text-[15px] sm:text-xs font-semibold text-[#e2e2e8] hover:text-white bg-[#1e2024] border border-[#282a2e] focus:outline-none focus:ring-2 focus:ring-[#00dbe7]"
             >
               Close
             </button>
             <button
               onClick={handlePrint}
-              className="w-full sm:w-auto flex justify-center items-center space-x-2 px-5 py-3 sm:py-2.5 rounded-xl sm:rounded-lg text-sm sm:text-xs font-bold bg-[#00dbe7] text-[#111318] hover:bg-[#a3c9ff] shadow-lg shadow-[#00dbe7]/20 focus:outline-none focus:ring-2 focus:ring-white transition-all"
+              className="w-full sm:w-auto flex justify-center items-center space-x-2 px-5 py-3.5 sm:py-2.5 rounded-xl sm:rounded-lg text-[15px] sm:text-xs font-bold bg-[#00dbe7] text-[#111318] hover:bg-[#a3c9ff] shadow-lg shadow-[#00dbe7]/20 focus:outline-none focus:ring-2 focus:ring-white transition-all"
             >
-              <Download className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+              <Download className="w-5 h-5 sm:w-3.5 sm:h-3.5" />
               <span>Download PDF</span>
             </button>
           </div>
