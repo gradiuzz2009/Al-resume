@@ -1,4 +1,4 @@
-import { ProjectItem, MigrationSlice, ExperienceItem, DevStackItem, GovernanceItem, BusinessCompetency, InterviewTopic, ImpactMetric, EnterprisePortfolio, ArchitectureGovernance, SkillProficiency } from '../types';
+import { ProjectItem, MigrationSlice, ExperienceItem, DevStackItem, GovernanceItem, BusinessCompetency, InterviewTopic, ImpactMetric, EnterprisePortfolio, ArchitectureGovernance, SkillProficiency, TransformationMetric, TrustSignal, ThoughtLeadershipItem } from '../types';
 
 export const PERSONAL_INFO = {
   name: "Ali Akhmad Fauzie",
@@ -872,5 +872,65 @@ export const INTERVIEW_TOPICS: InterviewTopic[] = [
     executiveSummary: "Trained custom Natural Language Processing classification models on 120+ Standard Operating Procedure categories, achieving 40-60% improvement in accuracy and cutting manual handling time by up to 80%.",
     deepDiveArchitecture: "• Model Training: Fine-tuned AI Builder text categorization models on historical customer service inquiries and standard operating procedures.\n• Automated Routing: Flow consumes incoming inquiries, queries AI Builder prediction API, extracts confidence score and recommended Standard Operating Procedure.\n• Confidence Gating: If confidence > 85%, auto-suggests Standard Operating Procedure link in agent interface; if < 85%, routes to Tier-2 senior lead for human-in-the-loop review.\n• Continuous Feedback: Feedback loop captures agent corrections to retrain models periodically.",
     keyArtifacts: ["120+ Standard Operating Procedure Categories", "AI Builder Natural Language Processing", "85% Confidence Gate", "-65% Handling Time"]
+  }
+];
+
+export const POSITIONING_STATEMENT = {
+  headline: "Enterprise Modernization, Architected End-to-End",
+  statement: "I bridge the gap between complex business operations and enterprise-grade Microsoft Power Platform architecture — combining Dataverse-first data architecture with 9+ years of service delivery and operations leadership to retire legacy systems without losing audit integrity or operational continuity.",
+  highlights: [
+    "Dataverse-First Data Architecture",
+    "361 Legacy Applications Modernized",
+    "16 Production Power Apps Live",
+    "$960K/Year License Cost Avoided"
+  ]
+};
+
+export const TRANSFORMATION_METRICS: TransformationMetric[] = [
+  { label: "Approval Turnaround", baseline: "2–3 Days", result: "15 Minutes", description: "Tasek Rebate Approval System with multi-tier financial sign-off and immutable audit trails." },
+  { label: "Legacy Applications", baseline: "361 Domino Apps", result: "16 Power Apps", description: "Consolidated across 6 functional slices with zero business interruption and 100% record integrity." },
+  { label: "Document Retrieval", baseline: "Manual Search", result: "99% Accuracy", description: "AI-powered recommendation engine across 5,000+ indexed operational documents." },
+  { label: "SOP Classification", baseline: "Manual Routing", result: "-65% Handling", description: "AI Builder Natural Language Processing across 120+ categories with human-in-the-loop gating." },
+  { label: "Delivery Time", baseline: "Manual Cycles", result: "70% Faster", description: "AI-assisted development pipelines versus traditional build cycles." },
+  { label: "License Cost", baseline: "Premium Connectors", result: "$960K/yr Saved", description: "SharePoint interim staging layer versus premium licensing during migration." }
+];
+
+export const TRUST_SIGNALS: TrustSignal[] = [
+  { icon: 'school', title: "Academic Foundation", detail: "Bachelor of International Business Management (Honours) — Dean's Award and scholarship recipient.", category: 'award' },
+  { icon: 'groups', title: "Enterprise Leadership", detail: "Led a multi-year modernization program across 28+ business units and 2,000+ users.", category: 'leadership' },
+  { icon: 'award', title: "Flagship Program", detail: "361 legacy applications consolidated into 16 production Power Apps with zero downtime cutover.", category: 'program' },
+  { icon: 'award', title: "Cost Optimization", detail: "$960K/year license cost avoided through Dataverse-first staging architecture.", category: 'award' }
+];
+
+export const THOUGHT_LEADERSHIP: ThoughtLeadershipItem[] = [
+  {
+    icon: 'account_tree',
+    title: "Dataverse-First Architecture",
+    summary: "Treat Dataverse as the enterprise system of record — not SharePoint as a production data store.",
+    points: [
+      "Business Units, Security Roles, and polymorphic lookups for data isolation",
+      "SharePoint Online reserved as an interim cost-optimization staging layer",
+      "Documented Dataverse Migration Blueprint as the enterprise-grade target"
+    ]
+  },
+  {
+    icon: 'route',
+    title: "Migration as Sliced Delivery",
+    summary: "Replace big-bang replatforming with domain triage and parallel-run cutovers.",
+    points: [
+      "6-slice functional triage from 54 Domino system reports",
+      "Event-driven Power Automate flows replace scheduled background agents",
+      "Parallel run phases validate 100% record integrity before decommission"
+    ]
+  },
+  {
+    icon: 'lightbulb',
+    title: "AI with Human-in-the-Loop",
+    summary: "Automate decisions where confidence is high, escalate to experts where it is not.",
+    points: [
+      "85% confidence gate auto-routes, below it escalates to Tier-2 review",
+      "Continuous feedback loop retrains classification models",
+      "Audit-ready suggestions keep humans accountable for final decisions"
+    ]
   }
 ];
