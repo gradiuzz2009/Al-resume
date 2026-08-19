@@ -1,0 +1,19 @@
+# OCR of home-full.png  (676x9811)
+[y=  410 x=   58] (1.0) Architecting
+[y=  480 x=   58] (0.99) Enterprlse
+[y=  544 x=   63] (1.0) Modernization&
+[y=  603 x=   63] (0.99) Scalable
+[y=  668 x=   63] (1.0) Automation
+[y= 1301 x=  370] (0.99) 16
+[y= 1305 x=   84] (0.99) 361
+[y= 1493 x=   84] (0.87) 28+
+[y= 1498 x=  375] (0.89) S960K/yr
+[y= 1820 x=   21] (0.7) ThuMoseminhnSurin
+[y= 3462 x=   53] (0.76) 01Domlno-Dotaverse
+[y= 3506 x=   48] (0.77) Enbarprse ArdMitocbure
+[y= 5331 x=   63] (0.6) Snaifkn
+[y= 5885 x=   58] (0.66) CS ImoN!
+[y= 6493 x=   58] (0.6) DSnd
+[y= 7665 x=   58] (0.7) SarH kqbilieeFom&:VanyCornl
+[y= 8219 x=   84] (0.7) Roedyt=ModasioeYourbtlerrin
+[y= 8263 x=  259] (0.69) Moruilowa?

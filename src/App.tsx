@@ -39,7 +39,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#111318] text-[#e2e2e8]">
       {/* Top Navigation - Sticky for CTA accessibility */}
-      <div className="sticky top-0 z-50 bg-[#111318]/95 backdrop-blur-xl shadow-2xl shadow-[#111318]/50 border-b border-[#282a2e]">
+      <div className="sticky top-0 z-50">
         <Navbar
           currentTab={currentTab}
           onSelectTab={setCurrentTab}

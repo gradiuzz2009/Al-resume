@@ -29,15 +29,42 @@ export const ExperienceView: React.FC = () => {
       <div className="space-y-3">
         <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-[#00dbe7] font-bold">
           <ShieldCheck className="w-4 h-4" />
-          <span>Track Record &amp; Leadership</span>
+          <span>Transformation Leadership</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Professional Experience &amp; Leadership History
+          Leadership &amp; Program Delivery Track Record
         </h1>
         <p className="text-xs sm:text-sm text-[#c0c7d4] max-w-3xl leading-relaxed">
-          Over 9 years driving enterprise modernizations, managing international cross-functional squads across 7 global markets, and architecting mission-critical digital workflows.
+          Over 9 years leading enterprise modernizations, managing international cross-functional teams across 7 global markets, and owning multi-year transformation programs from executive buy-in to operational cutover.
         </p>
       </div>
+
+      {/* Leadership Credibility Strip */}
+      <section className="bg-[#161b22] border border-[#282a2e] rounded-3xl p-6 sm:p-8 space-y-5">
+        <h3 className="text-xs font-mono uppercase tracking-widest text-[#dab9ff] font-bold">Program &amp; Team Leadership</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-[#1a1c20] p-4 rounded-xl border border-[#282a2e] space-y-1">
+            <p className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-[#a3c9ff] font-mono">34</p>
+            <p className="text-xs font-bold text-white">Direct Reports Led</p>
+            <p className="text-[11px] text-[#c0c7d4]">Multilingual teams across 7 international markets</p>
+          </div>
+          <div className="bg-[#1a1c20] p-4 rounded-xl border border-[#282a2e] space-y-1">
+            <p className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00dbe7] font-mono">380%</p>
+            <p className="text-xs font-bold text-white">Team Capacity Growth</p>
+            <p className="text-[11px] text-[#c0c7d4]">Scaled 9 → 34 agents in 18 months with 98%+ SLA</p>
+          </div>
+          <div className="bg-[#1a1c20] p-4 rounded-xl border border-[#282a2e] space-y-1">
+            <p className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-[#dab9ff] font-mono">28+</p>
+            <p className="text-xs font-bold text-white">Stakeholder Business Units</p>
+            <p className="text-[11px] text-[#c0c7d4]">Executive engagement across a multi-year migration program</p>
+          </div>
+          <div className="bg-[#1a1c20] p-4 rounded-xl border border-[#282a2e] space-y-1">
+            <p className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00dbe7] font-mono">98%+</p>
+            <p className="text-xs font-bold text-white">SLA Compliance</p>
+            <p className="text-[11px] text-[#c0c7d4]">Sustained across 361 applications and 2,000+ users</p>
+          </div>
+        </div>
+      </section>
 
       {/* Tag Filters */}
       <div className="flex items-center space-x-2 overflow-x-auto pb-2">

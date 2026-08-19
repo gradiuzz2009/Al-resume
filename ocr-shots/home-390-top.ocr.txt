@@ -1,0 +1,10 @@
+# OCR of home-390-top.png  (488x1055)
+[y=   35 x=  269] (0.99) Architect
+[y=   36 x=   78] (0.95) Ali Akhmad Fauzie
+[y=  208 x=   99] (0.98) AVAILABLE FOR ARCHITECTURE & TRANSFORMATION
+[y=  260 x=   74] (0.97) Kuala Lumpur/Bandung
+[y=  262 x=  302] (0.99) 9+YrsExp
+[y=  345 x=   95] (0.94) ALI AKHMAD FAUZIE · SOLUTION ARCHI
+[y=  355 x=   62] (0.93) 尚
+[y=  372 x=   97] (0.99) PORTFOLIO
+[y=  423 x=   61] (1.0) Architecting

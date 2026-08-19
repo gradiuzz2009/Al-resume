@@ -110,23 +110,23 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </div>
           </div>
 
-          {/* 3-Column Problem - Solution - Impact Cards */}
+          {/* Challenge - Strategy - Result Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
             
-            {/* Before / Problem */}
+            {/* Before / Challenge */}
             <div className="bg-[#1a1c20] p-6 rounded-2xl border border-red-500/20 space-y-4">
               <div className="flex items-center space-x-2 text-red-400 font-bold text-sm uppercase tracking-wide">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                <span>Before: The Challenge</span>
+                <span>The Challenge</span>
               </div>
               <p className="text-sm text-[#e2e2e8] leading-relaxed">{problemText}</p>
             </div>
 
-            {/* After / Solution */}
+            {/* Strategy / Solution */}
             <div className="bg-[#1a1c20] p-6 rounded-2xl border border-[#0078d4]/30 space-y-4 shadow-[0_0_15px_rgba(0,120,212,0.1)]">
               <div className="flex items-center space-x-2 text-[#a3c9ff] font-bold text-sm uppercase tracking-wide">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#0078d4]"></span>
-                <span>After: Architected Solution</span>
+                <span>The Strategy</span>
               </div>
               <p className="text-sm text-[#e2e2e8] leading-relaxed">{solutionText}</p>
             </div>
@@ -135,7 +135,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           <div className="bg-[#1a1c20] p-5 rounded-2xl border border-[#00dbe7]/30 space-y-3 flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-[0_0_15px_rgba(0,219,231,0.1)]">
             <div className="flex items-center space-x-2 text-[#00dbe7] font-bold text-sm uppercase tracking-wide shrink-0">
               <TrendingUp className="w-5 h-5" />
-              <span>Measurable Impact</span>
+              <span>Business Results</span>
             </div>
             <p className="text-sm text-white font-bold leading-relaxed">{impactText}</p>
           </div>

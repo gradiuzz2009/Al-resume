@@ -1,0 +1,9 @@
+# OCR of home-1440-top.png  (1800x1125)
+[y=   34 x=   78] (0.99) AliAkhmadFauzie
+[y=   36 x=  267] (1.0) Architect
+[y=  206 x=   94] (0.97)  AVAILABLE FOR ARCHITECTURE & TRANSFORMATION ROLES
+[y=  260 x=  301] (0.99) 9+YrsExp
+[y=  261 x=   73] (0.97) Kuala Lumpur/ Bandung
+[y=  345 x=   94] (0.97) ALI AKHMAD FAUZIE · SOLUTION ARCHITECT
+[y=  371 x=   96] (0.99) PORTFOLIO
+[y=  424 x=   63] (1.0) Architecting

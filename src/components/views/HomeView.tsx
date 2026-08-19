@@ -1,5 +1,5 @@
 import React from 'react';
-import { PERSONAL_INFO, KEY_METRICS, CORE_PROJECTS, MIGRATION_OVERVIEW, MIGRATION_SLICES } from '../../data/portfolioData';
+import { PERSONAL_INFO, KEY_METRICS, CORE_PROJECTS, MIGRATION_OVERVIEW, MIGRATION_SLICES, POSITIONING_STATEMENT, TRANSFORMATION_METRICS, TRUST_SIGNALS, THOUGHT_LEADERSHIP } from '../../data/portfolioData';
 import { NavTab, ProjectItem, MigrationSlice } from '../../types';
 import { 
   ArrowRight, 
@@ -17,7 +17,16 @@ import {
   Zap,
   ArrowUpRight,
   MonitorPlay,
-  Share2
+  Share2,
+  Award,
+  Users,
+  GraduationCap,
+  BadgeCheck,
+  Building2,
+  Lightbulb,
+  Compass,
+  Landmark,
+  Target
 } from 'lucide-react';
 
 interface HomeViewProps {
@@ -64,44 +73,58 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="space-y-6">
             <h2 className="text-sm font-mono uppercase tracking-widest text-[#00dbe7] font-bold flex items-center space-x-2.5">
               <Cpu className="w-5 h-5 text-[#00dbe7]" />
-              <span>ALI AKHMAD FAUZIE • SOLUTION ARCHITECT PORTFOLIO</span>
+              <span>ALI AKHMAD FAUZIE • ENTERPRISE MODERNIZATION ARCHITECT</span>
             </h2>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#00dbe7] tracking-tight leading-[1.05]">
-              Architecting Enterprise Modernization &amp; Scalable Automation
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#00dbe7] tracking-tight leading-[1.08]">
+              Transforming Legacy Enterprises into AI-Enabled Digital Organizations
             </h1>
 
             <p className="text-base sm:text-lg text-white leading-relaxed max-w-3xl">
-              Specialized in executing complex legacy migrations (Lotus Domino to Microsoft 365 / Dataverse) and engineering high-impact Power Platform solutions with enterprise-grade ALM, security governance, and AI workflows.
+              Enterprise Architect specializing in Microsoft 365, Power Platform, Dataverse, and AI-driven modernization — trusted to deliver large-scale transformation across hundreds of business-critical applications.
             </p>
+
+            <p className="text-sm text-[#c0c7d4] leading-relaxed max-w-3xl">
+              From Lotus Domino migrations and enterprise workflow modernization to AI-powered knowledge systems, I help organizations reduce operational complexity, strengthen governance, and accelerate business performance.
+            </p>
+          </div>
+
+          {/* Social Proof Bar */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            {['361 Applications Modernized', '28 Business Units', 'Enterprise Workflow Platforms', 'AI-Enabled Operations'].map((proof, idx) => (
+              <span key={idx} className="px-3 py-1.5 rounded-lg bg-[#1a1c20]/80 text-[11px] sm:text-xs font-semibold text-white border border-[#282a2e] flex items-center space-x-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00dbe7] shrink-0" />
+                <span>{proof}</span>
+              </span>
+            ))}
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <button
-              id="hero-btn-explore-projects"
-              onClick={() => onSelectTab('projects')}
+              id="hero-btn-discuss-transformation"
+              onClick={onOpenContact}
               className="flex items-center space-x-2 px-6 py-3.5 rounded-xl bg-[#0078d4] text-white text-sm font-bold shadow-[0_0_20px_rgba(0,120,212,0.4)] hover:bg-[#0086ea] transition-all"
             >
-              <span>Explore 365+ App Migration</span>
+              <span>Discuss a Transformation Initiative</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             
             <button
-              id="hero-btn-live-demos"
-              onClick={() => onSelectTab('demos')}
+              id="hero-btn-case-studies"
+              onClick={() => onSelectTab('projects')}
               className="flex items-center space-x-2.5 px-6 py-3.5 rounded-xl bg-[#1e2024] text-white text-sm font-bold border border-[#282a2e] hover:border-[#00dbe7]/40 transition-all"
             >
               <MonitorPlay className="w-4 h-4 text-[#00dbe7]" />
-              <span>Launch Live Enterprise Demos</span>
+              <span>Explore Enterprise Case Studies</span>
             </button>
 
             <button
-              id="hero-btn-interview-mode"
-              onClick={() => onSelectTab('interview')}
+              id="hero-btn-resume"
+              onClick={onOpenResume}
               className="flex items-center space-x-2.5 px-6 py-3.5 rounded-xl bg-[#2a1744]/40 text-white text-sm font-bold border border-[#5c2d91]/50 hover:bg-[#2a1744]/60 transition-all"
             >
               <Sparkles className="w-4 h-4 text-[#dab9ff]" />
-              <span>Architect Q&amp;A</span>
+              <span>Download Executive Resume</span>
             </button>
           </div>
 
@@ -135,12 +158,37 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* Core Architectural Pillars */}
+      {/* Executive Positioning Statement */}
+      <section className="rounded-3xl border border-[#282a2e] bg-[#161b22] p-8 sm:p-10 space-y-6 relative overflow-hidden">
+        <div className="glow-circle w-72 h-72 bg-[#5c2d91]/10 -top-16 -right-16"></div>
+        <div className="relative z-10 space-y-5">
+          <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-[#dab9ff] font-bold">
+            <Landmark className="w-4 h-4" />
+            <span>Who I Am</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            {POSITIONING_STATEMENT.headline}
+          </h2>
+          <p className="text-base sm:text-lg text-[#e2e2e8] leading-relaxed max-w-3xl">
+            {POSITIONING_STATEMENT.statement}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
+            {POSITIONING_STATEMENT.highlights.map((highlight, idx) => (
+              <div key={idx} className="bg-[#1a1c20] p-4 rounded-xl border border-[#282a2e] flex items-start space-x-2.5">
+                <BadgeCheck className="w-4 h-4 text-[#00dbe7] shrink-0 mt-0.5" />
+                <span className="text-sm font-semibold text-white leading-snug">{highlight}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Architectural Pillars — Outcome-First */}
       <section className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
           <div>
-            <h3 className="text-xs font-mono uppercase tracking-widest text-[#00dbe7] font-bold">Core Engineering Capabilities</h3>
-            <h2 className="text-2xl font-bold text-white tracking-tight">The Modernization Blueprint</h2>
+            <h3 className="text-xs font-mono uppercase tracking-widest text-[#00dbe7] font-bold">What I Deliver</h3>
+            <h2 className="text-2xl font-bold text-white tracking-tight">Transformation Outcomes at Enterprise Scale</h2>
           </div>
           <button
             onClick={() => onSelectTab('skills')}
@@ -159,11 +207,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <Database className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <h4 className="text-lg font-bold text-white">Legacy Domino Cutover</h4>
-              <p className="text-xs text-[#00dbe7] font-mono font-bold">365+ Databases • 28 Business Units</p>
+              <h4 className="text-lg font-bold text-white">Enterprise Application Modernization at Scale</h4>
+              <p className="text-xs text-[#00dbe7] font-mono font-bold">361 Applications • 28 Business Units</p>
             </div>
             <p className="text-sm text-[#e2e2e8] leading-relaxed">
-              Systematic triage and replacement of complex Lotus Notes agents, access control lists (ACLs), and view indices with modern Dataverse tables, SharePoint Online schemas, and Power Automate cloud flows.
+              Led the modernization of mission-critical legacy business platforms, eliminating technical debt while preserving audit integrity and operational continuity across 28 business units.
             </p>
             <ul className="space-y-2 text-sm text-white pt-4 border-t border-[#282a2e]">
               <li className="flex items-center space-x-2">
@@ -172,7 +220,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </li>
               <li className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0078d4]" />
-                <span><strong>6 Domain Slices</strong> (QMS, CAPA, Supply Chain, Logistics)</span>
+                <span>Consolidated <strong>361 legacy applications</strong> into a modern Microsoft ecosystem</span>
               </li>
             </ul>
           </div>
@@ -183,20 +231,20 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <Workflow className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <h4 className="text-lg font-bold text-white">Enterprise Workflow Engine</h4>
-              <p className="text-xs text-[#dab9ff] font-mono font-bold">Multi-Tier Approvals • ERP Sync</p>
+              <h4 className="text-lg font-bold text-white">Financial Process Transformation</h4>
+              <p className="text-xs text-[#dab9ff] font-mono font-bold">Days → Minutes • Audit-Ready</p>
             </div>
             <p className="text-sm text-[#e2e2e8] leading-relaxed">
-              Engineering rigorous financial approval matrices, headcount requisition gates, and purchase order synchronization (e.g. Tasek Cement <strong>RM 0.20/t rebate ceiling</strong> with <strong>15-minute cycle time</strong>).
+              Architected a centralized workflow platform integrating business approvals, ERP synchronization, audit controls, and policy enforcement across multiple business functions.
             </p>
             <ul className="space-y-2 text-sm text-white pt-4 border-t border-[#282a2e]">
               <li className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#5c2d91]" />
-                <span><strong>99% cycle time reduction</strong> on high-volume transactions</span>
+                <span>Reduced approval turnaround <strong>from days to minutes</strong></span>
               </li>
               <li className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#5c2d91]" />
-                <span>Dataverse database isolation for <strong>financial audit compliance</strong></span>
+                <span>Increased compliance visibility with <strong>immutable audit trails</strong></span>
               </li>
             </ul>
           </div>
@@ -207,24 +255,57 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <Sparkles className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <h4 className="text-lg font-bold text-white">AI-Assisted Intelligence</h4>
-              <p className="text-xs text-[#00dbe7] font-mono font-bold">AI Builder • Copilot Studio • NLP</p>
+              <h4 className="text-lg font-bold text-white">AI-Enabled Knowledge Operations</h4>
+              <p className="text-xs text-[#00dbe7] font-mono font-bold">Faster Decisions • Lower Support Effort</p>
             </div>
             <p className="text-sm text-[#e2e2e8] leading-relaxed">
-              Deploying custom NLP classification models and ranked semantic search algorithms across <strong>120+ SOP categories</strong>, slashing customer support ticket handling times by <strong>50-80%</strong>.
+              Built AI-enabled knowledge systems that reduce support effort, improve information discovery, and accelerate decision-making across complex operational environments.
             </p>
             <ul className="space-y-2 text-sm text-white pt-4 border-t border-[#282a2e]">
               <li className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#00dbe7]" />
-                <span>Dynamic procedure link generation &amp; confidence gating</span>
+                <span><strong>120+ SOP categories</strong> classified automatically with human-in-the-loop gating</span>
               </li>
               <li className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#00dbe7]" />
-                <span><strong>99% document recommendation accuracy</strong></span>
+                <span><strong>99% document recommendation accuracy</strong> across 5,000+ indexed files</span>
               </li>
             </ul>
           </div>
 
+        </div>
+      </section>
+
+      {/* Transformation Metrics Dashboard */}
+      <section className="space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <h3 className="text-xs font-mono uppercase tracking-widest text-[#dab9ff] font-bold">Proven Results</h3>
+            <h2 className="text-2xl font-bold text-white tracking-tight">Transformation Metrics: Baseline → Result</h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {TRANSFORMATION_METRICS.map((metric, idx) => (
+            <div key={idx} className="glass-card p-5 rounded-2xl space-y-3 hover:border-[#00dbe7]/40 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#c0c7d4] font-bold">{metric.label}</span>
+                <TrendingUp className="w-4 h-4 text-[#00dbe7]" />
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="flex-1 space-y-1">
+                  <p className="text-[10px] font-mono uppercase text-[#555962] font-bold">Before</p>
+                  <p className="text-sm text-[#c0c7d4] line-through decoration-[#5c2d91]/60 font-medium">{metric.baseline}</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-[#00dbe7] shrink-0" />
+                <div className="flex-1 space-y-1">
+                  <p className="text-[10px] font-mono uppercase text-[#00dbe7] font-bold">After</p>
+                  <p className="text-base font-black text-white leading-snug">{metric.result}</p>
+                </div>
+              </div>
+              <p className="text-xs text-[#c0c7d4] leading-relaxed pt-2 border-t border-[#282a2e]">{metric.description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -235,13 +316,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-[#0078d4]/20 border border-[#0078d4]/40 text-xs font-mono text-[#a3c9ff] font-semibold">
-              <span>FEATURED FLAGSHIP ARCHITECTURE</span>
+              <span>FLAGSHIP TRANSFORMATION PROGRAM</span>
             </div>
             <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               {MIGRATION_OVERVIEW.title}
             </h3>
             <p className="text-sm sm:text-base text-white leading-relaxed">
-              <strong>{MIGRATION_OVERVIEW.scope}</strong> {MIGRATION_OVERVIEW.sliceDelivery}
+              <strong>Led a multi-year modernization program involving business stakeholders across 28 business units</strong> — {MIGRATION_OVERVIEW.sliceDelivery}
             </p>
           </div>
 
@@ -250,7 +331,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               onClick={() => onSelectTab('projects')}
               className="px-5 py-3 rounded-xl bg-[#0078d4] hover:bg-[#0086ea] text-white text-xs font-bold shadow-md shadow-[#0078d4]/30 text-center"
             >
-              Explore 6 Migration Slices
+              View Modernization Case Studies
             </button>
             <button
               onClick={() => onLaunchDemo('warehouse')}
@@ -288,14 +369,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
       <section className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
           <div>
-            <h3 className="text-xs font-mono uppercase tracking-widest text-[#dab9ff] font-bold">Production Deliveries</h3>
-            <h2 className="text-2xl font-bold text-white tracking-tight">Core Automation &amp; Standalone Solutions</h2>
+            <h3 className="text-xs font-mono uppercase tracking-widest text-[#dab9ff] font-bold">Case Studies</h3>
+            <h2 className="text-2xl font-bold text-white tracking-tight">Business Challenges Solved</h2>
           </div>
           <button
             onClick={() => onSelectTab('projects')}
             className="text-xs font-semibold text-[#a3c9ff] hover:text-white flex items-center space-x-1"
           >
-            <span>View All Projects</span>
+            <span>View All Case Studies</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -350,7 +431,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <button
                   className="text-xs font-bold text-white hover:text-[#a3c9ff] flex items-center space-x-1"
                 >
-                  <span>Read Specs</span>
+                  <span>Read Case Study</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
@@ -372,14 +453,83 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
+      {/* Trust & Validation Signals */}
+      <section className="space-y-6">
+        <div>
+          <h3 className="text-xs font-mono uppercase tracking-widest text-[#00dbe7] font-bold">Third-Party Validation</h3>
+          <h2 className="text-2xl font-bold text-white tracking-tight">Credentials &amp; Track Record</h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {TRUST_SIGNALS.map((signal, idx) => {
+            const IconComponent = 
+              signal.icon === 'award' ? Award :
+              signal.icon === 'groups' ? Users :
+              signal.icon === 'school' ? GraduationCap :
+              BadgeCheck;
+            const colorMap = [
+              { bg: 'bg-[#0078d4]/20', border: 'border-[#0078d4]/40', text: 'text-[#a3c9ff]' },
+              { bg: 'bg-[#00dbe7]/20', border: 'border-[#00dbe7]/40', text: 'text-[#00dbe7]' },
+              { bg: 'bg-[#5c2d91]/20', border: 'border-[#5c2d91]/40', text: 'text-[#dab9ff]' },
+              { bg: 'bg-[#cda2ff]/20', border: 'border-[#cda2ff]/40', text: 'text-[#cda2ff]' }
+            ];
+            const color = colorMap[idx % 4];
+            return (
+              <div key={idx} className="bg-[#161b22] p-5 rounded-2xl border border-[#282a2e] space-y-3 hover:border-[#00dbe7]/40 transition-all">
+                <div className={`w-10 h-10 rounded-xl ${color.bg} border ${color.border} flex items-center justify-center ${color.text}`}>
+                  <IconComponent className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white">{signal.title}</h4>
+                  <p className="text-xs text-[#c0c7d4] mt-1 leading-relaxed">{signal.detail}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Thought Leadership */}
+      <section className="space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <h3 className="text-xs font-mono uppercase tracking-widest text-[#dab9ff] font-bold">Frameworks &amp; Perspectives</h3>
+            <h2 className="text-2xl font-bold text-white tracking-tight">Thought Leadership</h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {THOUGHT_LEADERSHIP.map((item, idx) => {
+            const IconComponent = item.icon === 'route' ? Compass : item.icon === 'account_tree' ? Building2 : Lightbulb;
+            return (
+              <div key={idx} className="glass-card p-8 rounded-3xl space-y-4 hover:border-[#5c2d91]/50 transition-all">
+                <div className="w-12 h-12 rounded-xl bg-[#5c2d91]/20 border border-[#5c2d91]/40 flex items-center justify-center text-[#dab9ff]">
+                  <IconComponent className="w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold text-white">{item.title}</h4>
+                <p className="text-sm text-[#e2e2e8] leading-relaxed">{item.summary}</p>
+                <ul className="space-y-2 text-xs text-[#c0c7d4] pt-2 border-t border-[#282a2e]">
+                  {item.points.map((point, pIdx) => (
+                    <li key={pIdx} className="flex items-start space-x-2">
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#00dbe7] mt-0.5 shrink-0" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* CTA Bottom Banner */}
       <section className="rounded-3xl border border-[#282a2e] bg-gradient-to-r from-[#161b22] via-[#1a1c20] to-[#161b22] p-8 sm:p-10 text-center space-y-6">
         <div className="max-w-2xl mx-auto space-y-3">
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-            Ready to Modernize Your Enterprise Workflows?
+            Let's Discuss Enterprise Transformation
           </h3>
           <p className="text-xs sm:text-sm text-[#c0c7d4] leading-relaxed">
-            Whether migrating complex legacy Lotus Notes databases or building intelligent Power Platform solutions from scratch, let's connect to discuss your transformation requirements.
+            Whether retiring legacy platforms, modernizing business-critical workflows, or deploying AI-enabled operating models — let's talk about what transformation means for your organization.
           </p>
         </div>
 
@@ -388,13 +538,19 @@ export const HomeView: React.FC<HomeViewProps> = ({
             onClick={onOpenContact}
             className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#0078d4] to-[#5c2d91] hover:from-[#0086ea] hover:to-[#6b35a8] text-white text-xs font-bold shadow-lg shadow-[#0078d4]/30"
           >
-            Start Conversation
+            Discuss a Transformation Initiative
+          </button>
+          <button
+            onClick={() => onSelectTab('projects')}
+            className="px-6 py-3 rounded-xl bg-[#1e2024] hover:bg-[#282a2e] text-white text-xs font-bold border border-[#282a2e]"
+          >
+            View Modernization Case Studies
           </button>
           <button
             onClick={onOpenResume}
             className="px-6 py-3 rounded-xl bg-[#1e2024] hover:bg-[#282a2e] text-white text-xs font-bold border border-[#282a2e]"
           >
-            View Official Resume
+            Download Executive Resume
           </button>
         </div>
       </section>

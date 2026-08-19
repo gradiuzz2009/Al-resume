@@ -1,0 +1,10 @@
+# OCR of home-390-mid.png  (488x1055)
+[y=   35 x=  269] (1.0) Architect
+[y=   36 x=   79] (0.97) AliAkhmadFauzie
+[y=  172 x=   60] (0.98) Legacy Domino Cutover
+[y=  204 x=   58] (0.97) 365+ Databases·28 Business Units
+[y=  255 x=   60] (0.99) SystematictriageandreplacementofcomplexLotusN
+[y=  283 x=   59] (0.97) access control lists (ACLs), and view indices with moder
+[y=  311 x=   59] (0.99) tables,SharePointOnlineschemas,andPowerAutomat
+[y=  384 x=   90] (0.96) Zero lost audit records or document revision histo
+[y=  419 x=   89] (0.94) 6DomainSlices(QMS,CAPA,SupplyChain,Logisti

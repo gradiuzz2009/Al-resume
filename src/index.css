@@ -95,6 +95,13 @@
   }
 }
 
+/* Header focus states — WCAG AA */
+header a:focus-visible,
+header button:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 3px;
+}
+
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 6px;

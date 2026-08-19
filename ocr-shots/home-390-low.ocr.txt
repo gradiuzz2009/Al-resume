@@ -1,0 +1,13 @@
+# OCR of home-390-low.png  (488x1055)
+[y=   35 x=  269] (0.99) Architect
+[y=   36 x=   80] (0.99) AliAkhmadFauzie
+[y=   89 x=   60] (0.9) Smartriow
+[y=  117 x=   58] (0.98) Business Request Automation —- Intelligent Routing
+[y=  167 x=   61] (0.96) Requests and approvalswererouted via email and spre
+[y=  194 x=   59] (0.97) resulting in delayed visibility and poor tracking.
+[y=  257 x=  113] (0.96) 80%manual taskreduction;90%data accurac
+[y=  280 x=  113] (0.96) typed Dataverse columns;100%real-time tra
+[y=  355 x=  170] (0.95) Power Apps
+[y=  356 x=  281] (1.0) PowerAutomate
+[y=  357 x=   72] (1.0) Dataverse
+[y=  441 x=   58] (0.97) Read Specs→

@@ -85,3 +85,58 @@ export interface InterviewTopic {
   codeOrFlowSnippet?: string;
   keyArtifacts: string[];
 }
+
+export interface ImpactMetric {
+  label: string;
+  value: string;
+  description: string;
+}
+
+export interface EnterprisePortfolio {
+  totalAppsModernized: number;
+  totalProductionApps: number;
+  totalCanvasScreens: number;
+  totalComponents: number;
+  totalAIAgents: number;
+  description: string;
+  departments: { name: string; appCount: number }[];
+}
+
+export interface ArchitectureGovernanceSection {
+  icon: string;
+  title: string;
+  points: string[];
+}
+
+export interface ArchitectureGovernance {
+  dataverseModel: ArchitectureGovernanceSection;
+  securityCompliance: ArchitectureGovernanceSection;
+  almGovernance: ArchitectureGovernanceSection;
+  proCodeExtensions: ArchitectureGovernanceSection;
+}
+
+export interface SkillProficiency {
+  name: string;
+  level: string;
+}
+
+export interface TransformationMetric {
+  label: string;
+  baseline: string;
+  result: string;
+  description: string;
+}
+
+export interface TrustSignal {
+  icon: string;
+  title: string;
+  detail: string;
+  category: 'certification' | 'leadership' | 'award' | 'program';
+}
+
+export interface ThoughtLeadershipItem {
+  icon: string;
+  title: string;
+  summary: string;
+  points: string[];
+}

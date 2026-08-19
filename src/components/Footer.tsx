@@ -39,12 +39,12 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenResume, onOpe
               </div>
               <div>
                 <h3 className="text-white font-bold text-base tracking-tight">{PERSONAL_INFO.name}</h3>
-                <p className="text-xs text-[#00dbe7] font-mono">Solution Architect & Enterprise Modernization</p>
+                <p className="text-xs text-[#00dbe7] font-mono">Enterprise Modernization Architect</p>
               </div>
             </div>
 
             <p className="text-xs leading-relaxed text-[#c0c7d4] max-w-md">
-              Specializing in architecting large-scale migrations from legacy systems (Lotus Domino) to Microsoft 365, Power Platform, and Dataverse with robust ALM, security governance, and AI automation.
+              Helping enterprises retire legacy platforms, modernize business processes, and deploy AI-powered operating models using Microsoft 365, Power Platform, and Azure.
             </p>
 
             <div className="flex items-center space-x-3 pt-2">
@@ -81,31 +81,31 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenResume, onOpe
 
           {/* Col 3: Architecture & Projects */}
           <div className="space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-[#a3c9ff] font-semibold">Solutions</h4>
+            <h4 className="text-xs font-mono uppercase tracking-widest text-[#a3c9ff] font-semibold">Case Studies</h4>
             <ul className="space-y-2 text-xs">
               <li>
                 <button onClick={() => onSelectTab('projects')} className="hover:text-white transition-colors flex items-center space-x-1.5">
-                  <span>IOI Domino Migration (365+ DBs)</span>
+                  <span>Enterprise Modernization Program</span>
                 </button>
               </li>
               <li>
                 <button onClick={() => onSelectTab('projects')} className="hover:text-white transition-colors">
-                  PulseTrack Ops Orchestrator
+                  Financial Process Transformation
                 </button>
               </li>
               <li>
                 <button onClick={() => onSelectTab('projects')} className="hover:text-white transition-colors">
-                  SmartFlow Request Flow
+                  Business Request Automation
                 </button>
               </li>
               <li>
                 <button onClick={() => onSelectTab('projects')} className="hover:text-white transition-colors">
-                  Tasek Cement Rebate Engine
+                  AI-Enabled Knowledge Systems
                 </button>
               </li>
               <li>
                 <button onClick={() => onSelectTab('projects')} className="hover:text-white transition-colors">
-                  InfoSec & IT Server Register
+                  Governance & Compliance Platforms
                 </button>
               </li>
             </ul>
@@ -173,7 +173,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenResume, onOpe
                 className="w-full py-2 px-3 rounded-lg text-xs font-semibold bg-[#1e2024] hover:bg-[#0078d4] text-white border border-[#282a2e] transition-all flex items-center justify-center space-x-1.5"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#00dbe7]" />
-                <span>Schedule Consultation</span>
+                <span>Discuss a Transformation Initiative</span>
               </button>
             </div>
           </div>

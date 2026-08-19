@@ -20,13 +20,141 @@ import {
   Filter,
   Plus,
   RefreshCw,
-  FileText
+  FileText,
+  Building2,
+  Target,
+  Briefcase,
+  BadgeCheck
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface LiveDemosViewProps {
   initialDemo?: string;
 }
+
+// ─── Enterprise Transformation Framework — strategic layers ───
+const TRANSFORMATION_LAYERS = [
+  {
+    label: 'Business Transformation Domains',
+    items: ['Finance', 'Operations', 'Compliance', 'Warehousing', 'Service Management', 'AI'],
+    icon: Building2
+  },
+  {
+    label: 'Transformation Challenges Solved',
+    items: ['Cost Control', 'Governance', 'Process Efficiency', 'Legacy Modernization'],
+    icon: Target
+  },
+  {
+    label: 'Interactive Enterprise Demonstrations',
+    items: ['FinOps', 'ITSM', 'ERP', 'Warehouse', 'Compliance'],
+    icon: MonitorPlay
+  },
+  {
+    label: 'Technology Foundation',
+    items: ['Microsoft 365', 'Dataverse', 'Power Platform', 'AI'],
+    icon: Layers
+  }
+];
+
+// ─── Architecture Strategy per demonstration (Challenge → Approach → Result) ───
+const DEMO_STRATEGIES: Record<string, { challenge: string; approach: string; result: string; benefits: string[] }> = {
+  finops: {
+    challenge: 'Disparate cloud purchases created fragmented oversight and licensing inefficiencies.',
+    approach: 'Designed a centralized governance framework integrating procurement workflows, approval chains, spending analytics, and executive reporting.',
+    result: 'Enabled transparent spending management and stronger operational governance.',
+    benefits: ['Reduced approval delays', 'Improved policy compliance', 'Increased visibility into operational costs', 'Faster reporting cycles', 'Stronger audit readiness']
+  },
+  'it-service': {
+    challenge: 'Service requests were tracked across fragmented tools, creating SLA risk and limited operational visibility.',
+    approach: 'Consolidated incident, request, and governance workflows into a single service operations platform with SLA monitoring and governed acceptance windows.',
+    result: 'Zero SLA breaches with a governed 72-hour acceptance window across mapped operational processes.',
+    benefits: ['Reduced service downtime', 'Faster incident resolution', 'Improved IT governance', 'Clearer operational accountability']
+  },
+  erp: {
+    challenge: 'Procurement and staff requisitions relied on manual approval chains with limited audit trails.',
+    approach: 'Automated a four-tier approval flow with mandatory internal lockouts, ERP synchronization, and policy enforcement.',
+    result: 'Accelerated procurement cycles while preserving compliance and audit integrity.',
+    benefits: ['Faster procurement cycles', 'Stronger audit trails', 'Consistent policy enforcement', 'Reduced manual reconciliation']
+  },
+  warehouse: {
+    challenge: 'Pre-loading inspections and stock movements were paper-based, creating demurrage risk and compliance gaps.',
+    approach: 'Digitized container inspections with geo-tagged photo evidence, automated gate passes, and ERP-synchronized stock movement logging.',
+    result: 'Zero demurrage delays with 100% inspection evidence captured in-field.',
+    benefits: ['Reduced demurrage penalties', 'Improved inspection compliance', 'Real-time stock visibility', 'Faster gate release']
+  },
+  maintenance: {
+    challenge: 'Asset reliability and server health checks were reactive, risking unplanned downtime and audit findings.',
+    approach: 'Built a unified command center combining plant telemetry, preventative maintenance work orders, and automated server audit checklists.',
+    result: 'Proactive reliability management with verified recovery targets and audit-ready records.',
+    benefits: ['Reduced unplanned downtime', 'Improved asset reliability', 'Audit-ready evidence', 'Faster issue detection']
+  },
+  rebate: {
+    challenge: 'Multi-component commercial rebates were calculated manually, creating errors, disputes, and slow approval cycles.',
+    approach: 'Engineered a governed calculation engine applying seven formula components with statutory caps and multi-level approval scheduling.',
+    result: 'Reduced approval cycle time from days to ~15 minutes with policy-enforced ceiling controls.',
+    benefits: ['Faster commercial approvals', 'Eliminated calculation errors', 'Policy-enforced caps', 'Improved partner trust']
+  },
+  'cs-resolver': {
+    challenge: 'Customer inquiries were routed manually across 120+ SOP categories, inflating handling time and inconsistency.',
+    approach: 'Deployed an AI-enabled classification engine that routes issues to the correct SOP and deep-links operators to resolution workspaces.',
+    result: '50–80% handling time reduction with consistent, audit-tracked issue resolution.',
+    benefits: ['Reduced handling time', 'Consistent classifications', 'Faster decision-making', 'Scalable knowledge operations']
+  }
+};
+
+const StrategyBlock: React.FC<{ demoId: string }> = ({ demoId }) => {
+  const strategy = DEMO_STRATEGIES[demoId];
+  if (!strategy) return null;
+  return (
+    <div className="glass-card p-5 sm:p-6 rounded-2xl border border-[#282a2e] space-y-5 animate-in fade-in duration-200">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex items-center space-x-2">
+          <Briefcase className="w-4 h-4 text-[#00dbe7]" />
+          <h3 className="text-sm font-bold text-white uppercase tracking-wide">Architecture Strategy</h3>
+        </div>
+        <span className="text-[10px] font-mono text-[#c0c7d4] bg-[#111318] px-3 py-1.5 rounded-lg border border-[#282a2e] max-w-md leading-relaxed">
+          Representative enterprise-scale operating model — governance workflows, budget controls, and approval processes commonly used in large organizations.
+        </span>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="p-4 rounded-xl bg-[#111318] border border-[#282a2e] space-y-2">
+          <p className="text-[10px] font-mono uppercase text-amber-400 font-bold flex items-center space-x-1.5">
+            <AlertCircle className="w-3.5 h-3.5" />
+            <span>Business Challenge</span>
+          </p>
+          <p className="text-xs text-[#c0c7d4] leading-relaxed">{strategy.challenge}</p>
+        </div>
+        <div className="p-4 rounded-xl bg-[#111318] border border-[#282a2e] space-y-2">
+          <p className="text-[10px] font-mono uppercase text-[#a3c9ff] font-bold flex items-center space-x-1.5">
+            <Layers className="w-3.5 h-3.5" />
+            <span>Transformation Approach</span>
+          </p>
+          <p className="text-xs text-[#c0c7d4] leading-relaxed">{strategy.approach}</p>
+        </div>
+        <div className="p-4 rounded-xl bg-[#111318] border border-[#282a2e] space-y-2">
+          <p className="text-[10px] font-mono uppercase text-emerald-400 font-bold flex items-center space-x-1.5">
+            <TrendingUp className="w-3.5 h-3.5" />
+            <span>Business Result</span>
+          </p>
+          <p className="text-xs text-[#c0c7d4] leading-relaxed">{strategy.result}</p>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <p className="text-[10px] font-mono uppercase tracking-widest text-[#00dbe7] font-bold">Potential Enterprise Benefits</p>
+        <div className="flex flex-wrap gap-2">
+          {strategy.benefits.map((benefit) => (
+            <span key={benefit} className="text-[11px] px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center space-x-1.5">
+              <Check className="w-3 h-3" />
+              <span>{benefit}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const LiveDemosView: React.FC<LiveDemosViewProps> = ({ initialDemo = 'finops' }) => {
   const [activeDemo, setActiveDemo] = useState<string>(initialDemo);
@@ -103,30 +231,76 @@ export const LiveDemosView: React.FC<LiveDemosViewProps> = ({ initialDemo = 'fin
   };
 
   const demosList = [
-    { id: 'finops', title: 'FinOps Spend Portal', icon: <DollarSign className="w-4 h-4" />, badge: 'Image 3 Style' },
-    { id: 'it-service', title: 'Industrial Nexus ITSM', icon: <Cpu className="w-4 h-4" />, badge: 'Image 4 Style' },
-    { id: 'erp', title: 'Enterprise Core ERP', icon: <Layers className="w-4 h-4" />, badge: 'Image 5 Style' },
-    { id: 'warehouse', title: 'Warehouse Central', icon: <Box className="w-4 h-4" />, badge: 'Image 6 Style' },
-    { id: 'maintenance', title: 'Maintenance HQ Command', icon: <Server className="w-4 h-4" />, badge: 'Image 12 Style' },
-    { id: 'rebate', title: 'Tasek Rebate Calculator', icon: <TrendingUp className="w-4 h-4" />, badge: 'RM 0.20 Cap' },
-    { id: 'cs-resolver', title: 'AI SOP Classifier Engine', icon: <Sparkles className="w-4 h-4" />, badge: 'NLP / AI Builder' }
+    { id: 'finops', title: 'Cloud Cost Governance', icon: <DollarSign className="w-4 h-4" />, badge: 'FinOps' },
+    { id: 'it-service', title: 'Enterprise Service Operations', icon: <Cpu className="w-4 h-4" />, badge: 'ITSM' },
+    { id: 'erp', title: 'Financial Process Automation', icon: <Layers className="w-4 h-4" />, badge: 'ERP' },
+    { id: 'warehouse', title: 'Warehouse Compliance & Inspection', icon: <Box className="w-4 h-4" />, badge: 'Logistics' },
+    { id: 'maintenance', title: 'Asset Reliability Management', icon: <Server className="w-4 h-4" />, badge: 'Reliability' },
+    { id: 'rebate', title: 'Commercial Pricing Governance', icon: <TrendingUp className="w-4 h-4" />, badge: 'Policy Capped' },
+    { id: 'cs-resolver', title: 'AI-Enabled Decision Support', icon: <Sparkles className="w-4 h-4" />, badge: 'AI / NLP' }
   ];
 
   return (
     <div className="space-y-8 py-6 animate-in fade-in duration-300">
       
-      {/* Page Header */}
+      {/* Page Header — Enterprise Transformation Solutions in Action */}
       <div className="space-y-3">
         <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-[#00dbe7] font-bold">
           <MonitorPlay className="w-4 h-4" />
-          <span>Interactive Enterprise Application Sandbox</span>
+          <span>Enterprise Transformation Solutions in Action</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Live Operational Prototypes &amp; Simulations
+          See Enterprise Modernization in Action
         </h1>
         <p className="text-xs sm:text-sm text-[#c0c7d4] max-w-3xl leading-relaxed">
-          Experience real interactive simulations of Ali's production Power Platform applications, including the FinOps spend matrix, ITSM lifecycle, warehouse photo inspections, server audit checkers, and the formula-capped rebate engine.
+          Unlike static portfolios, this site includes interactive business platforms demonstrating real-world modernization patterns built using Microsoft 365, Power Platform, Dataverse, SharePoint Online, and AI services. Each experience showcases how legacy processes can be transformed into scalable, governed enterprise solutions.
         </p>
+      </div>
+
+      {/* Trust & Provenance — derived from production patterns */}
+      <div className="flex items-start space-x-3 bg-[#0078d4]/10 border border-[#0078d4]/30 rounded-2xl p-4 sm:p-5">
+        <BadgeCheck className="w-4 h-4 text-[#a3c9ff] mt-0.5 shrink-0" />
+        <p className="text-xs text-[#c0c7d4] leading-relaxed">
+          These demonstrations are derived from <strong className="text-white">production patterns and enterprise transformation initiatives</strong> delivered across manufacturing, operations, governance, and Microsoft ecosystem modernization programs. Sensitive business data and proprietary details have been anonymized.
+        </p>
+      </div>
+
+      {/* Enterprise Transformation Framework — strategic layers */}
+      <div className="glass-card p-5 sm:p-6 rounded-2xl border border-[#282a2e] space-y-3">
+        <div className="flex items-center space-x-2">
+          <Briefcase className="w-4 h-4 text-[#00dbe7]" />
+          <h3 className="text-sm font-bold text-white uppercase tracking-wide">Enterprise Transformation Framework</h3>
+        </div>
+        <p className="text-xs text-[#c0c7d4] leading-relaxed">
+          Every demonstration follows the same operating pattern — a business domain, a transformation challenge, an interactive solution, and the Microsoft technology foundation beneath it.
+        </p>
+        <div className="space-y-1">
+          {TRANSFORMATION_LAYERS.map((layer, idx) => {
+            const LayerIcon = layer.icon;
+            return (
+              <div key={layer.label}>
+                <div className="flex items-start space-x-3 bg-[#111318] border border-[#282a2e] rounded-xl p-3.5">
+                  <LayerIcon className="w-4 h-4 text-[#00dbe7] mt-0.5 shrink-0" />
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-mono uppercase tracking-widest text-[#c0c7d4] font-bold">{layer.label}</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {layer.items.map((item) => (
+                        <span key={item} className="text-[11px] px-2.5 py-1 rounded-full bg-[#1a1c20] text-white border border-[#282a2e]">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {idx < TRANSFORMATION_LAYERS.length - 1 && (
+                  <div className="flex justify-center py-0.5 text-[#0078d4]">
+                    <ArrowRight className="w-4 h-4 rotate-90" />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Demo Selector Tabs */}
@@ -163,7 +337,10 @@ export const LiveDemosView: React.FC<LiveDemosViewProps> = ({ initialDemo = 'fin
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#161b22] p-5 rounded-2xl border border-[#282a2e]">
             <div>
               <span className="text-[10px] font-mono uppercase text-[#00dbe7] font-semibold">Executive FinOps Dashboard</span>
-              <h2 className="text-xl font-bold text-white">Cloud Infrastructure &amp; Licensing Capital</h2>
+              <h2 className="text-xl font-bold text-white">FinOps Governance Platform</h2>
+              <p className="text-[11px] text-[#c0c7d4] mt-1 max-w-xl leading-relaxed">
+                Centralized visibility into cloud spending, licensing investment, procurement approvals, and operational accountability.
+              </p>
             </div>
             <div className="flex items-center space-x-3 text-xs font-mono">
               <span className="text-[#c0c7d4]">Reporting Period: <strong className="text-white">FY2025-Q1</strong></span>
@@ -808,6 +985,39 @@ export const LiveDemosView: React.FC<LiveDemosViewProps> = ({ initialDemo = 'fin
           </div>
         </div>
       )}
+
+      {/* Architecture Strategy for the active demonstration */}
+      <StrategyBlock demoId={activeDemo} />
+
+      {/* Enterprise Capability Coverage */}
+      <div className="glass-card p-5 sm:p-6 rounded-2xl border border-[#282a2e] space-y-4">
+        <div className="flex items-center space-x-2">
+          <Building2 className="w-4 h-4 text-[#00dbe7]" />
+          <h3 className="text-sm font-bold text-white uppercase tracking-wide">Enterprise Capability Coverage</h3>
+        </div>
+        <p className="text-xs text-[#c0c7d4] leading-relaxed max-w-3xl">
+          The showcased systems represent common enterprise transformation domains. Together they demonstrate how modern Microsoft platforms can replace fragmented legacy systems with governed, scalable operating models.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          {[
+            { label: 'Finance & FinOps', icon: DollarSign },
+            { label: 'Governance & Compliance', icon: ShieldCheck },
+            { label: 'IT Service Management', icon: Cpu },
+            { label: 'ERP Integration', icon: Layers },
+            { label: 'Warehouse Operations', icon: Box },
+            { label: 'Asset Management', icon: Server },
+            { label: 'AI-Enabled Decision Support', icon: Sparkles }
+          ].map((domain) => {
+            const DomainIcon = domain.icon;
+            return (
+              <div key={domain.label} className="p-3.5 rounded-xl bg-[#111318] border border-[#282a2e] flex items-center space-x-2.5 hover:border-[#0078d4]/50 transition-colors">
+                <DomainIcon className="w-4 h-4 text-[#00dbe7] shrink-0" />
+                <span className="text-xs text-white font-semibold">{domain.label}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
     </div>
   );

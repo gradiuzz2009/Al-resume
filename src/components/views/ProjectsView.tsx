@@ -69,13 +69,13 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
       <div className="space-y-3">
         <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-[#00dbe7] font-bold">
           <Briefcase className="w-4 h-4" />
-          <span>Project Portfolio: Power Platform &amp; Automation Solutions</span>
+          <span>Modernization Case Studies</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Enterprise Projects &amp; Migration Architecture
+          Enterprise Transformation &amp; Case Studies
         </h1>
         <p className="text-xs sm:text-sm text-[#c0c7d4] max-w-3xl leading-relaxed">
-          Standardized project documentation covering end-to-end Power Platform architectures, legacy Lotus Domino modernizations, financial approval engines, and AI workflow integrations.
+          Each case study follows Challenge → Strategy → Result: the business problem, the transformation approach, and the measurable outcomes delivered across legacy modernization, financial workflows, and AI-enabled operations.
         </p>
       </div>
 
@@ -330,7 +330,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                 <div className="space-y-1.5">
                   <p className="text-[10px] font-mono uppercase text-[#e2e2e8] font-bold flex items-center space-x-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>
-                    <span>The Problem</span>
+                    <span>The Challenge</span>
                   </p>
                   <p className="text-sm text-[#e2e2e8] leading-relaxed line-clamp-2">
                     {proj.problem}
@@ -341,7 +341,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                 <div className="space-y-1.5">
                   <p className="text-[10px] font-mono uppercase text-[#a3c9ff] font-bold flex items-center space-x-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#0078d4]"></span>
-                    <span>The Solution</span>
+                    <span>The Strategy</span>
                   </p>
                   <p className="text-sm text-[#e2e2e8] leading-relaxed line-clamp-2">
                     {proj.solution}
@@ -352,7 +352,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                 <div className="p-4 rounded-xl bg-[#111318] border border-[#282a2e] space-y-2">
                   <div className="flex items-center space-x-1.5 text-[10px] font-mono uppercase text-[#00dbe7] font-bold">
                     <TrendingUp className="w-4 h-4" />
-                    <span>Impact &amp; Results</span>
+                    <span>Business Results</span>
                   </div>
                   <p className="text-sm text-white font-bold leading-snug">{proj.impact}</p>
                 </div>
@@ -372,7 +372,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
                 <button
                   className="text-xs font-bold text-white hover:text-[#a3c9ff] flex items-center space-x-1"
                 >
-                  <span>Detailed Specs</span>
+                  <span>Full Case Study</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 

@@ -1,0 +1,12 @@
+# OCR of home-1440-low.png  (1800x1125)
+[y=   34 x=   78] (0.94) Ali Akhmad Fauzie
+[y=   36 x=  267] (1.0) Architect
+[y=  174 x=   65] (0.99) FEATURED FLAGSHIP ARCHITECTURE
+[y=  215 x=   49] (0.95) IOl Domino -→ Dataverse
+[y=  261 x=   51] (1.0) Enterprise Architecture
+[y=  312 x=   50] (0.99) Architected the enterprise migration of 361 Lotus Domino
+[y=  339 x=   48] (0.99) applications across 28+ business units to Microsoft 365, SharePoint
+[y=  371 x=   50] (0.99) Online, OneDrive, Teams, and Dataverse. Spearheaded the rebuild and
+[y=  399 x=   49] (1.0) deployment of 16 production Canvas & Model-Driven Power Apps, 7,878
+[y=  428 x=   49] (0.99) Canvas screens, and 200+ custom React/TypeScript components as a live
+[y=  455 x=   48] (0.97)  operational slice.

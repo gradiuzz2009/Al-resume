@@ -1,0 +1,18 @@
+# OCR of home-1440-mid.png  (1800x1125)
+[y=   34 x=   78] (0.97) Ali Akhmad Fauzie
+[y=   35 x=  623] (1.0) 三
+[y=   36 x=  267] (1.0) Architect
+[y=   36 x=  561] (0.66) 口
+[y=  118 x=  372] (0.99) PRODUCTIONAPPS
+[y=  120 x=   85] (0.99) FORMSCATALOGUED
+[y=  148 x=  372] (0.99) Live Power Apps in Production
+[y=  149 x=   85] (0.98) Across 28+ Business Units
+[y=  244 x=   85] (0.99) 28+
+[y=  251 x=  371] (1.0) $960K/yr
+[y=  305 x=   84] (0.99) DEPARTMENTS
+[y=  315 x=  373] (0.97) LICENSE COSTAVOIDED
+[y=  325 x=   84] (0.99) MODERNIZED
+[y=  343 x=  371] (0.99) SharePoint interim vs premium
+[y=  355 x=   84] (0.96) Quality. Supply Chain, Information
+[y=  365 x=  369] (1.0) licensing
+[y=  378 x=   83] (0.97) Technology. Human Resources
